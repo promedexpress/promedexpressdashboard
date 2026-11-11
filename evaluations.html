@@ -180,7 +180,7 @@ async function login(name,pass){
 
 $('#gf').addEventListener('submit',async ev=>{
   ev.preventDefault();const b=$('#gb');$('#ge').textContent='';b.disabled=true;b.textContent='Checking…';
-  try{D=await login($('#gu').value,$('#gp').value)}catch(x){$('#ge').textContent='Incorrect username or passcode.';b.disabled=false;b.textContent='Sign in';return}
+  try{D=await login($('#gu').value.trim(),$('#gp').value.trim())}catch(x){$('#ge').textContent='Incorrect username or passcode.';b.disabled=false;b.textContent='Sign in';return}
   $('#gp').value='';$('#gate').hidden=true;$('#app').hidden=false;start();
 });
 
